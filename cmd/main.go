@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"go_ecom_api/cmd/api"
 	"log"
 )
@@ -12,6 +11,4 @@ func main() {
 	if err := server.Run(); err != nil {
 		log.Fatal(err)
 	}
-
-	fmt.Println("server is running on port :8080")
 }
