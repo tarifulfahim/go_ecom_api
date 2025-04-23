@@ -1,20 +1,20 @@
 package api
 
 import (
-	"database/sql"
 	"go_ecom_api/cmd/services/user"
 	"log"
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"github.com/jackc/pgx/v5"
 )
 
 type APIServer struct {
 	addr string
-	db   *sql.DB
+	db   *pgx.Conn
 }
 
-func NewServerAPI(addr string, db *sql.DB) *APIServer {
+func NewServerAPI(addr string, db *pgx.Conn) *APIServer {
 	return &APIServer{
 		addr: addr,
 		db:   db,
